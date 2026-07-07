@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMatch JS - Simulador de Compatibilidade com Vagas</title>
+    <meta name="description" content="Simulador de compatibilidade com vagas de emprego, utilizando JavaScript para calcular a compatibilidade com base nas habilidades e experiência do usuário.">
+    <link rel="stylesheet" href="./assets/styles/index.style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="assets\img\logo.svg" alt="SkillMatch Logo" width="150">
+        <h1>SkillMatch JS</h1>
+        <p>Simulador de Compatibilidade com Vagas Front-End</p>
+    </header>   
+
+    <main>
+        <section id="formulario" arial-label="Formulário de Compatibilidade">
+            <h2>Perfil do candidato</h2>
+            <form id="formPerfil" novalidate>
+
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                <span class="erro" id="erroNome" aria-live="polite"></span>
+
+                <label for="area">Área de atuação:</label>
+                <input type="text" id="area" name="area" placeholder="Ex: Desenvolvimento Web" required>
+                <span class="erro" id="erroArea" aria-live="polite"></span>
+    
+                <label for="habilidades">Habilidades:</label>
+                <input type="text" id="habilidades" name="habilidades" placeholder="Ex: JavaScript, GitHub, CSS" required>
+                <span class="erro" id="erroHabilidades" aria-live="polite"></span>
+
+                <label for="experienciaMeses">Experiência:</label>
+                <input type="number" id="experienciaMeses" name="experienciaMeses" placeholder="Ex: 12" min="0" required>
+                <span class="erro" id="erroExperiencia" aria-live="polite"></span>
+
+                <button type="submit" id="submitBtn">Analizar vagas</button>
+
+            </form>
+        </section>
+
+        <section id="resultado" arial-label="Resultado da anále" aria-live="polite">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SkillMatch JS &copy; 2026 - Desenvolvido por Doner José de Andrade</p>
+    </footer>
+
+    <script src="./assets/scripts/main.js"></script>
+      
+
+</body>
+</html>
