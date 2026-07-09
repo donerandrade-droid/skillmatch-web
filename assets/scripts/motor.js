@@ -37,4 +37,19 @@ calcularCompatibilidade(habilidadesCandidato) {
         return 'Média';
         return 'Baixa';
     }
+
+     obterRotulo() {
+        return this.cargo;
+    }
+}
+
+export class VagaFrontEnd extends Vaga {
+    constructor (id, empresa, cargo, requisitos, salario, modalidade, senioridade){
+        super(id, empresa, cargo, requisitos, salario, modalidade);
+        this.senioridade = senioridade;
+    }
+
+    obterRotulo() {
+        return `${this.cargo} (${this.senioridade})`;
+    }
 }
