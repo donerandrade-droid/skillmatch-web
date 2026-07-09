@@ -29,3 +29,12 @@ calcularCompatibilidade(habilidadesCandidato) {
         classificacao: this.classificar(percentual)
     };
 }
+
+    classificar (percentual) {
+     if (percentual >= 80) 
+         return 'Alta';
+      if (percentual >= 50)
+        return 'Média';
+        return 'Baixa';
+    }
+}
