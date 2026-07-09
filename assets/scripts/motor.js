@@ -53,3 +53,33 @@ export class VagaFrontEnd extends Vaga {
         return `${this.cargo} (${this.senioridade})`;
     }
 }
+
+export function criarContadorAnalises() {
+    let total = 0;
+    return function() {
+        total += 1;
+        return total;
+    }
+}
+
+export function gerarRecomendacaoEstudo(resultado) {
+    const contagemFaltantes = {};
+
+    resultado.forEach(({faltantes}) =>{
+        faltantes.forEach(hab => {
+            contagemFaltantes[hab] = (contagemFaltantes[hab] || 0) + 1;
+        });
+    });
+
+    const habilidadesOrdenadas = Object.entries(contagemFaltantes)
+        .sort((a, b) => b[1] - a[1])
+        .map(([habilidade]) => habilidade);
+
+    if (habilidadesOrdenadas.length === 0) {
+        return 'Parabéns! Você atende a todos os requisitos das vagas analisadas.';
+    }
+
+    const toptres = habilidadesOrdenadas.slice(0, 3). join(", ");
+    return `Para aumentar suas chances, estude: ${topTres}.`;
+
+}
