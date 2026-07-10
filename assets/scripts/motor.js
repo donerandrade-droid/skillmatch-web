@@ -83,3 +83,33 @@ export function gerarRecomendacaoEstudo(resultado) {
     return `Para aumentar suas chances, estude: ${topTres}.`;
 
 }
+
+export function analisarCandidato(candidato, vagas, aoConcluir) {
+    const habilidadesCandidato = candidato.habilidades;
+    const resultados = vagas.map(vaga => {
+        const analise = vaga.calcularCompatibilidade(habilidadesCandidato);
+        return {vaga, ...analise};
+    });
+
+    const melhorResultado = resultados.reduce((melhorAteAgora, atual) => {
+        if (atual.percentual > melhorAteAgora.percentual)
+            return atual;
+        if (atual.percentual === melhorAteAgora.percentual) {
+            return candidato.experienciaMeses >= 12 ? atual : melhorAteAgora;    
+        }
+        return melhorAteAgora;
+    }, resultados[0]);
+
+    const recomendacao = gerarRecomendacaoEstudo(resultados);
+    const relatorio = {
+        resultados,
+        melhorResultado,
+        recomendacao
+    };
+
+    if (typeof aoConcluir === 'function') {
+        aoConcluir(relatorio);
+    }
+
+    return relatorio;
+} 
