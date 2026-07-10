@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "empresa": "Nexora Tech",
+    "cargo": "Desenvolvedor Front-End Júnior",
+    "requisitos": ["HTML", "CSS", "JavaScript", "Git", "Responsividade"],
+    "salario": "R$ 2.800 - R$ 3.500",
+    "modalidade": "Remoto",
+    "senioridade": "Júnior"
+  },
+  {
+    "id": 2,
+    "empresa": "Orbita Digital",
+    "cargo": "Desenvolvedor Web",
+    "requisitos": ["HTML", "CSS", "JavaScript", "Acessibilidade", "SEO", "Flexbox"],
+    "salario": "R$ 3.200 - R$ 4.000",
+    "modalidade": "Híbrido",
+    "senioridade": "Júnior"
+  },
+  {
+    "id": 3,
+    "empresa": "Vertex Software",
+    "cargo": "Front-End Pleno",
+    "requisitos": ["JavaScript", "Módulos ES", "Git", "Testes", "APIs REST", "Acessibilidade"],
+    "salario": "R$ 5.500 - R$ 7.000",
+    "modalidade": "Remoto",
+    "senioridade": "Pleno"
+  },
+  {
+    "id": 4,
+    "empresa": "Bytecraft Studio",
+    "cargo": "Desenvolvedor Front-End Júnior",
+    "requisitos": ["HTML", "CSS", "JavaScript", "DOM", "Flexbox"],
+    "salario": "R$ 2.600 - R$ 3.200",
+    "modalidade": "Presencial",
+    "senioridade": "Júnior"
+  },
+  {
+    "id": 5,
+    "empresa": "Lumen Interactive",
+    "cargo": "Front-End Sênior",
+    "requisitos": ["JavaScript", "Módulos ES", "Performance", "Acessibilidade", "Testes", "APIs REST", "Arquitetura"],
+    "salario": "R$ 9.000 - R$ 12.000",
+    "modalidade": "Remoto",
+    "senioridade": "Sênior"
+  }
+]
