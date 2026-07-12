@@ -1,5 +1,13 @@
 const secaoResultado = document.getElementById('resultado');
 
+export function preencherFormulario(perfil) {
+    if (!perfil) return;
+    document.getElementById("nome").value = perfil.nome ?? "";
+    document.getElementById("area").value = perfil.area ?? "";
+    document.getElementById("habilidades").value = (perfil.habilidades ?? []).join(", ");
+    document.getElementById("experienciaMeses").value = perfil.experienciaMeses ??"";
+}
+
 export function validarFormulario (){
     const nome = document.getElementById('nome').value.trim();
     const area = document.getElementById('area').value.trim();
