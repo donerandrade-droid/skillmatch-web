@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("formPerfil");
     form.addEventListener("submit", aoEnviarFormulario);
+
+    const btnLimpar = document.getElementById("limparBtn");
+    btnLimpar.addEventListener("click", () => {
+        form.reset();
+        document.getElementById("resultado").innerHTML = "";
+        document.getElementById("melhorVaga").innerHTML = "";
+    });
 });
 
 async function aoEnviarFormulario(evento) {

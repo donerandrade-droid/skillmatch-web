@@ -94,9 +94,13 @@ export function renderizarResultado({resultados, melhorResultado, recomendacao})
 
     secaoResultado.appendChild(criarDestaqueMelhorVaga(melhorResultado, recomendacao));
 
+    const outrasVagas = resultados
+        .filter(resultado => resultado.vaga.id !== melhorResultado.vaga.id)
+        .sort((a, b) => b.percentual - a.percentual);
+
     const grade = document.createElement('div');
     grade.className = "cards-container";
-    resultados.forEach(resultado => grade.appendChild(criarCardVaga(resultado)));
+    outrasVagas.forEach(resultado => grade.appendChild(criarCardVaga(resultado)));
     secaoResultado.appendChild(grade);
 }
 
@@ -133,7 +137,7 @@ function criarDestaqueMelhorVaga(resultado, recomendacao) {
 
 function criarCardVaga(resultado) {
     const {vaga, percentual, classificacao, encontradas, faltantes} = resultado;
-    const classeClassificacao = `cassificacao-${classificacao.toLowerCase()}`;
+    const classeClassificacao = `classificacao-${classificacao.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
     
     const card = document.createElement("article");
     card.className = `card-vaga ${classeClassificacao}`;
