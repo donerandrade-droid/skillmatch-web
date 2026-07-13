@@ -112,7 +112,7 @@ main{
 button[type="submit"] {
     width: 100%;
     padding: 0.9rem;
-    background-color: var(--laranja);
+    background-color: #C2500A;
     color: white;
     border: none;
     border-radius: 8px;
