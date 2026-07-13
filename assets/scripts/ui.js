@@ -8,6 +8,27 @@ export function preencherFormulario(perfil) {
     document.getElementById("experienciaMeses").value = perfil.experienciaMeses ??"";
 }
 
+function exibirErros(erros) {
+    const mapaIds = {
+        nome: "erroNome",
+        area: "erroArea",
+        habilidades: "erroHabilidades",
+        experienciaMeses: "erroExperiencia"
+    };
+
+    Object.keys(mapaIds).forEach(campo => {
+        const spanErro = document.getElementById(mapaIds[campo]);
+        const input = document.getElementById(campo);
+        if (erros[campo]) {
+            spanErro.textContent = erros[campo];
+            input.setAttribute("aria-invalid", "true");
+        } else {
+            spanErro.textContent = "";
+            input.removeAttribute("aria-invalid");
+        }
+    });
+}
+
 export function validarFormulario (){
     const nome = document.getElementById('nome').value.trim();
     const area = document.getElementById('area').value.trim();
@@ -33,7 +54,7 @@ if (Object.keys(erros).length > 0) {
 const candidato ={
     nome,
     area,
-    habilidades: habilidadesTexto.split(',').map(habilidade => habilidade.trim()).filter(boolean), experienciaMeses: Number(experienciaMeses)
+    habilidades: habilidadesTexto.split(',').map(habilidade => habilidade.trim()).filter(Boolean), experienciaMeses: Number(experienciaMeses)
 };
 
 return {valido: true, candidato, erros:{}};
@@ -63,7 +84,7 @@ export function mostrarVazio(mensagem) {
     secaoResultado.appendChild(div);
 }
 
-export function renderizaResultado({resultados, melhorResultado, recomendacao}) {
+export function renderizarResultado({resultados, melhorResultado, recomendacao}) {
     secaoResultado.innerHTML = "";
 
     if (!resultados || resultados.length === 0) {
@@ -111,8 +132,8 @@ function criarDestaqueMelhorVaga(resultado, recomendacao) {
 }
 
 function criarCardVaga(resultado) {
-    const {vaga, percentual, cassificacao, encontradas, faltantes} = resultado;
-    const classeClassificacao = `cassificacao-${classificacao.toLowerCase}`;
+    const {vaga, percentual, classificacao, encontradas, faltantes} = resultado;
+    const classeClassificacao = `cassificacao-${classificacao.toLowerCase()}`;
     
     const card = document.createElement("article");
     card.className = `card-vaga ${classeClassificacao}`;
@@ -168,7 +189,7 @@ function criarListaHabilidades(titulo, habilidades, classeExtra) {
     habilidades.forEach(hab => {
         const item = document.createElement("li");
         item.textContent = hab;
-        lista.appendChild(lista);
+        lista.appendChild(item);
     });
     wrapper.appendChild(lista);
 

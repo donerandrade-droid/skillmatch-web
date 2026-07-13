@@ -79,7 +79,7 @@ export function gerarRecomendacaoEstudo(resultado) {
         return 'Parabéns! Você atende a todos os requisitos das vagas analisadas.';
     }
 
-    const toptres = habilidadesOrdenadas.slice(0, 3). join(", ");
+    const topTres = habilidadesOrdenadas.slice(0, 3). join(", ");
     return `Para aumentar suas chances, estude: ${topTres}.`;
 
 }

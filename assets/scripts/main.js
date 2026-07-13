@@ -3,7 +3,7 @@ import { carregarVagas, salvarPerfil, carregarPerfil } from "./dados.js";
 import {
     preencherFormulario,
     validarFormulario,
-    mostrarCarregamento,
+    mostrarCarregando,
     mostrarErro,
     mostrarVazio,
     renderizarResultado

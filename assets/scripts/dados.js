@@ -1,4 +1,4 @@
-import { VagasFrontEnd } from "./motor.js";
+import { VagaFrontEnd } from "./motor.js";
 
 export async function carregarVagas() {
     const response = await fetch("./assets/dados/vagas.json");
@@ -9,7 +9,7 @@ export async function carregarVagas() {
 
     const dadosBrutos = await response.json();
 
-    return dadosBrutos.map(vaga => new VagasFrontEnd(v.id, v.empresa, v.cargo, v.requisitos, v.salario, v.modalidade, v.senioridade));
+    return dadosBrutos.map(vaga => new VagaFrontEnd(vaga.id, vaga.empresa, vaga.cargo, vaga.requisitos, vaga.salario, vaga.modalidade, vaga.senioridade));
 
 }
 
