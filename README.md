@@ -35,6 +35,7 @@ Construído em HTML, CSS e JavaScript puro — sem frameworks, sem bibliotecas e
 
 | | |
 |---|---|
+| Site ao vivo | [donerandrade-droid.github.io/skillmatch-web](https://donerandrade-droid.github.io/skillmatch-web/) |
 | Repositório | [github.com/donerandrade-droid/skillmatch-web](https://github.com/donerandrade-droid/skillmatch-web) |
 | Quadro Kanban (Trello) | [trello.com/b/OzjFglaS/skillmatch-web](https://trello.com/b/OzjFglaS/skillmatch-web) |
 
@@ -104,6 +105,7 @@ A divisão segue o princípio dados × regras × tela: `vagas.json` guarda os da
 <br>
 
 ## Como executar
+> A forma mais rápida de ver o projeto funcionando é acessar o [site publicado no GitHub Pages](https://donerandrade-droid.github.io/skillmatch-web/). Para rodar localmente e editar o código, siga os passos abaixo.
 
 Este projeto usa módulos ES (`import`/`export`) e `fetch`, por isso não funciona abrindo o `index.html` direto pelo navegador (`file://`). É necessário rodar por um servidor local.
 
@@ -164,7 +166,6 @@ motor calcula compatibilidade ──► callback ──► renderiza os cards
 
 - Filtro e ordenação de vagas por modalidade ou faixa salarial
 - Tema claro/escuro persistido no localStorage
-- Deploy via GitHub Pages
 - Testes automatizados para o motor de compatibilidade
 - Geolocalização para sugerir vagas presenciais próximas
 
