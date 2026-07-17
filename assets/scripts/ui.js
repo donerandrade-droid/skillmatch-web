@@ -170,6 +170,16 @@ function criarDestaqueMelhorVaga(resultado, recomendacao) {
     recomendacaoEl.textContent = recomendacao;
     div.appendChild(recomendacaoEl);
 
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    const modalidade = document.createElement("span");
+    modalidade.textContent = resultado.vaga.modalidade;
+    const salario = document.createElement("span");
+    salario.textContent = resultado.vaga.salario;
+    meta.appendChild(modalidade);
+    meta.appendChild(salario);
+    div.appendChild(meta);
+
     return div;
 }
 

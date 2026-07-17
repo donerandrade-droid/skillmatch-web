@@ -199,7 +199,32 @@ button[type="submit"]:hover {
     color: var(--texto-secundario);
     border-top: 1px solid var(--borda);
     padding-top: 0.6rem;
+
 }
+
+.melhor-vaga .meta {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.melhor-vaga .meta span:first-child {
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--borda);
+}
+.melhor-vaga .meta span:last-child {
+    color: var(--laranja);
+    font-weight: 700;
+    font-size: 1rem;
+}    
+
 
 /* ===== Grade de cards (mobile-first: 1 coluna) ===== */
 .cards-container {

@@ -146,7 +146,7 @@ export function analisarCandidato(candidato, vagas, aoConcluir) {
         return melhorAteAgora;
     }, resultados[0]);
 
-    const recomendacao = gerarRecomendacaoEstudo(resultados);
+    const recomendacao = gerarRecomendacaoEstudo([melhorResultado]);
     const relatorio = {
         resultados,
         melhorResultado,
